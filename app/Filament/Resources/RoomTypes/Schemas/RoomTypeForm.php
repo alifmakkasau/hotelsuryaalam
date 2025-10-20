@@ -4,6 +4,9 @@ namespace App\Filament\Resources\RoomTypes\Schemas;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
 use Filament\Schemas\Schema;
 
 class RoomTypeForm
@@ -12,19 +15,24 @@ class RoomTypeForm
     {
         return $schema
             ->components([
-                TextInput::make('name')
-                    ->required(),
-                TextInput::make('capacity')
-                    ->required()
-                    ->numeric()
-                    ->default(2),
-                Textarea::make('description')
-                    ->default(null)
+                TextInput::make('name')->required(),
+                TextInput::make('capacity')->numeric()->minValue(1)->default(2),
+                Textarea::make('description'),
+                TextInput::make('base_price')->numeric()->prefix('IDR')->required(),
+                Select::make('amenities')->multiple()
+                    ->relationship('amenities','name')->preload(),
+                Repeater::make('images')
+                    ->relationship() // <-- ini yang benar (untuk morphMany/hasMany)
+                    ->schema([
+                        FileUpload::make('path')
+                            ->directory('room-types')   // folder
+                            ->image()                   // validasi gambar
+                            ->required(),
+                       TextInput::make('sort')
+                            ->numeric()->default(0)->label('Urutan'),
+                    ])
+                    ->orderable('sort')
                     ->columnSpanFull(),
-                TextInput::make('base_price')
-                    ->required()
-                    ->numeric()
-                    ->default(0.0),
-            ]);
+            ])->columns(2);
     }
 }

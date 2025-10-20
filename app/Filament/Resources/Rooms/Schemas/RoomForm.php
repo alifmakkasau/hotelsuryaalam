@@ -12,15 +12,12 @@ class RoomForm
     {
         return $schema
             ->components([
-                TextInput::make('room_type_id')
-                    ->required()
-                    ->numeric(),
-                TextInput::make('number')
-                    ->required(),
+                Select::make('room_type_id')
+                        ->relationship('roomType','name')->searchable()->required(),
+                TextInput::make('number')->required(),
                 Select::make('status')
-                    ->options(['available' => 'Available', 'maintenance' => 'Maintenance'])
-                    ->default('available')
-                    ->required(),
-            ]);
+                        ->options(['available'=>'Available','maintenance'=>'Maintenance'])
+                        ->default('available')->required(),
+                ])->columns(2);
     }
 }

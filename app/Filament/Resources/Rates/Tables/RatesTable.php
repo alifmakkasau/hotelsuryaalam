@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Rooms\Tables;
+namespace App\Filament\Resources\Rates\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -8,19 +8,26 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class RoomsTable
+class RatesTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('room_type_id')
+                TextColumn::make('roomType.name')
                     ->label('Tipe Kamar')
+                    ->searchable()
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('number')
-                    ->searchable(),
-                TextColumn::make('status'),
+                TextColumn::make('date')
+                    ->date()
+                    ->sortable(),
+                TextColumn::make('price')
+                    ->money('idr')
+                    ->sortable(),
+                TextColumn::make('allotment')
+                    ->numeric()
+                    ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
