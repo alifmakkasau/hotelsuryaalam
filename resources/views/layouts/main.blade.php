@@ -24,7 +24,11 @@
     <header class="header_area">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand logo_h" href="/"><img src="{{ asset('template/image/Logo.png') }}" alt=""></a>
+                <a class="navbar-brand logo_h" href="#">
+    <img src="{{ asset('template/image/logo.png') }}" alt="Hotel Surya Alam" style="max-height: 50px; width: auto;"
+>
+    <span style="font-weight:bold; font-size:20px; color:#5a3825;"></span>
+</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +39,7 @@
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav ml-auto">
                         <li class="nav-item {{ request()->is('/') ? 'active' : '' }}"><a class="nav-link" href="/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Accomodation</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
