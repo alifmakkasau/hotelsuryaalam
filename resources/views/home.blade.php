@@ -28,10 +28,10 @@
                         <div class="boking_table">
                             <form action="#">
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    {{--  <div class="col-md-4">
                                         <div class="book_tabel_item">
                                             <div class="form-group">
-                                                <div class="input-group date">
+                                               <div class='input-group date' id='datetimepicker11'>
                                                     <input type="text" class="form-control" placeholder="Tanggal Check-in">
                                                 </div>
                                             </div>
@@ -40,13 +40,32 @@
                                     <div class="col-md-4">
                                         <div class="book_tabel_item">
                                             <div class="form-group">
-                                                <div class="input-group date">
+                                                <div class='input-group date' id='datetimepicker1'>
                                                     <input type="text" class="form-control" placeholder="Tanggal Check-out">
+                                                </div>
+                                            </div>
+                                        </div>  --}}
+                                        <div class="col-md-6">
+                                        <div class="book_tabel_item">
+                                            <div class="form-group">
+                                                <div class='input-group date' id='datetimepicker11'>
+                                                    <input type='text' class="form-control" placeholder="Tanggal Check-In"/>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class='input-group date' id='datetimepicker1'>
+                                                    <input type='text' class="form-control" placeholder="Tanggal Check-Out"/>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-4">
                                         <div class="book_tabel_item">
                                             <div class="input-group">
                                                 <select class="wide">
@@ -57,12 +76,35 @@
                                                 </select>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-2">
                                         <div class="book_tabel_item">
                                             <button type="submit" class="book_now_btn button_hover">Cek Kamar</button>
                                         </div>
                                     </div>
+                                    {{--  <div class="col-md-4">
+                                        <div class="book_tabel_item">
+                                            <div class="input-group">
+                                                <select class="wide">
+                                                    <option data-display="Adult">Adult</option>
+                                                    <option value="1">Old</option>
+                                                    <option value="2">Younger</option>
+                                                    <option value="3">Potato</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group">
+                                                <select class="wide">
+                                                    <option data-display="Child">Child</option>
+                                                    <option value="1">Child</option>
+                                                    <option value="2">Baby</option>
+                                                    <option value="3">Child</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>  --}}
+                                    {{--  <div class="col-md-2">
+                                        <div class="book_tabel_item">
+                                            <button type="submit" class="book_now_btn button_hover">Cek Kamar</button>
+                                        </div>
+                                    </div>  --}}
                                 </div>
                             </form>
                         </div>
@@ -108,7 +150,7 @@
                             @if ($room->images->isNotEmpty())
                                 <img src="{{ asset('storage/' . $room->images->first()->path) }}" alt="{{ $room->name }}" class="img-fluid rounded-top">
                             @else
-                                <img src="{{ asset('template/image/default-room.jpg') }}" alt="Default Room" class="img-fluid rounded-top">
+                                <img src="{{ asset('template/image/room1.jpg') }}" alt="Default Room" class="img-fluid rounded-top">
                             @endif
 
                             <a href="#" class="btn theme_btn button_hover position-absolute bottom-0 start-50 translate-middle-x mb-2">

@@ -25,6 +25,7 @@ class RoomTypeForm
                     ->relationship() // <-- ini yang benar (untuk morphMany/hasMany)
                     ->schema([
                         FileUpload::make('path')
+                            ->disk('public')
                             ->directory('room-types')   // folder
                             ->image()                   // validasi gambar
                             ->required(),
