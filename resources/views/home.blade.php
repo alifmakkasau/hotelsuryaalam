@@ -135,9 +135,9 @@
 <!--================ About Area =================-->
 
 <!--================ Facilities Area =================-->
-<section class="facilities_area section_gap">
+<section class="facilities_area section_gap" style="background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('{{ asset('template/image/room2.jpg') }}') center / cover no-repeat;">
    <div class="container">
-        <div class="section_title text-center">
+        <div class="section_title text-center" >
             <h2 class="title_color" style="color: #ffffff;">Royal Facilities</h2>
             <p style="color: #ffffff;">Fasilitas lengkap untuk memastikan kenyamanan dan kepuasan Anda selama menginap.</p>
         </div>
