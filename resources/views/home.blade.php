@@ -135,10 +135,10 @@
 <!--================ About Area =================-->
 
 <!--================ Facilities Area =================-->
-<section class="facilities_area section_gap" style="background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('{{ asset('template/image/room2.jpg') }}') center / cover no-repeat;">
+<section class="facilities_area section_gap" style="background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('{{ asset('template/image/fasilitashome.jpg') }}') center / cover no-repeat;">
    <div class="container">
         <div class="section_title text-center" >
-            <h2 class="title_color" style="color: #ffffff;">Royal Facilities</h2>
+            <h2 class="title_color" style="color: #ffffff;">Hotel Surya Alam Facilities</h2>
             <p style="color: #ffffff;">Fasilitas lengkap untuk memastikan kenyamanan dan kepuasan Anda selama menginap.</p>
         </div>
         <div class="row mb_30">
@@ -166,7 +166,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="facilities_item">
                     <h4 class="sec_h4"><i class="lnr lnr-camera-video"></i> CCTV 24 Jam</h4>
-                    <p>Keamanan hotel dijaga selama 24 jam dengan sistem CCTV yang canggih.</p>
+                    <p>Area hotel dilengkapi dengan CCTV aktif 24 jam demi kenyamanan dan keamanan tamu selama menginap.</p>
                 </div>
             </div>
 

@@ -2,35 +2,32 @@
 
 @section('content')
 <!-- ======= Tentang Kami ======= -->
-<section class="about_area section_gap">
+<section class="about_area section_gap" style="margin-bottom: 100px;">
     <div class="container">
         <div class="section_title text-center">
             <h2 class="title_color">Tentang Kami</h2>
-            <p>Hotel Surya Alam merupakan penginapan yang mengutamakan kenyamanan, kebersihan, serta pelayanan yang ramah dan profesional. Kami berkomitmen untuk memberikan pengalaman menginap terbaik bagi setiap tamu, baik yang sedang berlibur maupun melakukan perjalanan bisnis.
-
-            Berlokasi strategis di jalur utama Trans Kalimantan dan berdekatan dengan Terminal ALBN, Hotel Surya Alam menjadi pilihan ideal bagi para wisatawan maupun pelaku perjalanan yang mencari akomodasi dengan akses mudah dan lingkungan yang tenang.
-
-            Untuk menunjang kenyamanan Anda, Hotel Surya Alam dilengkapi dengan berbagai fasilitas unggulan, di antaranya:
-
-            Kamar ber-AC yang bersih, nyaman, dan tertata rapi
-
-            Akses Wi-Fi gratis 24 jam
-
-            Restoran dengan sajian menu pilihan
-
-            Layanan resepsionis 24 jam
-
-            Area parkir luas dan aman
-
-            Mushola yang bersih dan nyaman
-
-            Dengan kombinasi antara lokasi strategis, fasilitas lengkap, dan pelayanan terbaik, Hotel Surya Alam bertekad menjadi tempat istirahat yang memberikan ketenangan, kepuasan, serta pengalaman menginap yang berkesan bagi setiap tamu.</p>
+            <p style="text-align: justify;">
+                Hotel Surya Alam merupakan penginapan yang mengutamakan kenyamanan, kebersihan, serta pelayanan yang ramah dan profesional. 
+                Kami berkomitmen untuk memberikan pengalaman menginap terbaik bagi setiap tamu, baik yang sedang berlibur maupun melakukan perjalanan bisnis.
+                <br><br>
+                Berlokasi strategis di jalur utama Trans Kalimantan dan berdekatan dengan Terminal ALBN, Hotel Surya Alam menjadi pilihan ideal bagi para wisatawan maupun pelaku perjalanan yang mencari akomodasi dengan akses mudah dan lingkungan yang tenang.
+                <br><br>
+                Untuk menunjang kenyamanan Anda, Hotel Surya Alam dilengkapi dengan berbagai fasilitas unggulan, di antaranya:
+                <br><br>
+                Kamar ber-AC yang bersih, nyaman, dan tertata rapi<br>
+                Akses Wi-Fi gratis 24 jam<br>
+                Restoran dengan sajian menu pilihan<br>
+                Layanan resepsionis 24 jam<br>
+                Area parkir luas dan aman<br>
+                Mushola yang bersih dan nyaman<br><br>
+                Dengan kombinasi antara lokasi strategis, fasilitas lengkap, dan pelayanan terbaik, Hotel Surya Alam bertekad menjadi tempat istirahat yang memberikan ketenangan, kepuasan, serta pengalaman menginap yang berkesan bagi setiap tamu.
+            </p>
         </div>
     </div>
 </section>
 
 <!-- ======= Foto & Visi Misi ======= -->
-<section class="vision_area" style="padding-top: 40px;">
+<section class="vision_area" style="padding-bottom: 40px;">
     <div class="container">
         <div class="row align-items-center">
             <!-- FOTO DI KIRI -->
@@ -44,12 +41,14 @@
             <div class="col-lg-6 col-md-12">
                 <div class="section_title">
                     <h2 class="title_color">Visi</h2>
-                    <p>Menjadi hotel pilihan utama dengan pelayanan terbaik, kenyamanan maksimal, dan suasana yang menenangkan bagi setiap tamu.</p>
+                    <p style="text-align: justify;">
+                        Menjadi hotel pilihan utama dengan pelayanan terbaik, kenyamanan maksimal, dan suasana yang menenangkan bagi setiap tamu.
+                    </p>
                 </div>
 
                 <div class="section_title mt-4">
                     <h2 class="title_color">Misi</h2>
-                    <ul style="font-size: 16px; line-height: 1.8;">
+                    <ul style="font-size: 16px; line-height: 1.8; text-align: justify;">
                         <li>Memberikan layanan terbaik yang berorientasi pada kepuasan pelanggan.</li>
                         <li>Menjaga kebersihan dan kenyamanan lingkungan hotel.</li>
                         <li>Meningkatkan profesionalisme staf dan pelayanan ramah.</li>
@@ -60,4 +59,4 @@
         </div>
     </div>
 </section>
-@endsection
+

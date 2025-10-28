@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="{{ asset('template/image/favicon.png') }}" type="image/png">
-    <title>@yield('title', 'Royal Hotel')</title>
+    <title>@yield('title', 'Hotel Surya Alam')</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('template/css/bootstrap.css') }}">
@@ -20,35 +20,44 @@
 
 <body>
 
-    <!--================Header Area =================-->
-    <header class="header_area">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand logo_h" href="#">
-    <img src="{{ asset('template/image/logo.png') }}" alt="Hotel Surya Alam" style="max-height: 50px; width: auto;"
->
-    <span style="font-weight:bold; font-size:20px; color:#5a3825;"></span>
-</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav menu_nav ml-auto">
-                        <li class="nav-item {{ request()->is('/') ? 'active' : '' }}"><a class="nav-link" href="/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Accomodation</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <!--================Header Area =================-->
+ <!--================Header Area =================-->
+<header class="header_area">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand logo_h" href="{{ route('home') }}">
+                <img src="{{ asset('template/image/logo.png') }}" alt="Hotel Surya Alam" style="max-height: 50px; width: auto;">
+                <span style="font-weight:bold; font-size:20px; color:#5a3825;"></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                <ul class="nav navbar-nav menu_nav ml-auto">
+                    <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item {{ request()->is('about') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('about') }}">About</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Accomodation</a></li>
+                    <li class="nav-item {{ request()->is('gallery') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('gallery') }}">Gallery</a>
+                    </li>
+                    <li class="nav-item {{ request()->is('contact') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+</li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<!--================Header Area =================-->
+
 
     <!--================ Main Content =================-->
     @yield('content')
@@ -64,12 +73,15 @@
             </div>
             <div class="col-lg-3 col-md-6 single-footer-widget">
                 <h4>Navigation Links</h4>
-                <ul>
-                    <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><a href="{{ url('/about') }}">Tentang Kami</a></li>
-                    <li><a href="{{ url('/accomodation') }}">Kamar</a></li>
-                    <li><a href="{{ url('/contact') }}">Kontak</a></li>
-                </ul>
+                <ul class="list">
+    <li><a href="{{ route('home') }}">Home</a></li>
+    <li><a href="{{ route('about') }}">Tentang Kami</a></li>
+    <li><a href="{{ route('gallery') }}">Galeri</a></li>
+    <li><a href="#">Kamar</a></li>
+    <li><a href="{{ route('contact') }}">Kontak</a></li>
+
+</ul>
+
             </div>
             <div class="col-lg-3 col-md-6 single-footer-widget">
                 <h4>Newsletter</h4>
