@@ -33,10 +33,9 @@
 <section class="vision_area" style="padding-top: 40px;">
     <div class="container">
         <div class="row align-items-center">
-
             <!-- FOTO DI KIRI -->
             <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 text-center">
-                <img src="{{ asset('template/image/tentang-hotel-surya-alam.jpg') }}" 
+                <img src="{{ asset('template/image/aboutpage.jpg')}}" 
                      alt="Hotel Surya Alam"
                      style="width:100%; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.15);">
             </div>
