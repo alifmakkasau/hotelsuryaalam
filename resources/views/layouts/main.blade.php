@@ -55,13 +55,51 @@
     <!--================ End Main Content =================-->
 
     <!--================ Footer Area =================-->
-    <footer class="footer-area section_gap">
-        <div class="container">
-            <p class="footer-text text-center mb-0">
-                © {{ date('Y') }} Royal Hotel — Template by Colorlib
-            </p>
+    <footer class="footer-area section_gap" style="background-color: #03091e;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 single-footer-widget">
+                <h4>About Hotel</h4>
+                <p>Hotel Surya Alam menghadirkan kenyamanan dan pelayanan terbaik di kawasan strategis Trans Kalimantan. Tempat ideal untuk beristirahat dengan suasana tenang dan fasilitas lengkap.</p>
+            </div>
+            <div class="col-lg-3 col-md-6 single-footer-widget">
+                <h4>Navigation Links</h4>
+                <ul>
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a href="{{ url('/about') }}">Tentang Kami</a></li>
+                    <li><a href="{{ url('/accomodation') }}">Kamar</a></li>
+                    <li><a href="{{ url('/contact') }}">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 single-footer-widget">
+                <h4>Newsletter</h4>
+                <p>Dapatkan info promo dan berita terbaru dari Hotel Surya Alam.</p>
+                <form action="#" class="form-inline">
+                    <input type="email" class="form-control" placeholder="Email Anda" onfocus="this.placeholder=''" onblur="this.placeholder='Email Anda'">
+                    <button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right"></i></button>
+                </form>
+            </div>
+            <div class="col-lg-3 col-md-6 single-footer-widget">
+                <h4>Follow Us</h4>
+                <div class="footer-social d-flex align-items-center">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-whatsapp"></i></a>
+                </div>
+            </div>
         </div>
-    </footer>
+        <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap mt-4 pt-3 border-top">
+            <p class="footer-text m-0 text-white">
+                Copyright ©2025 Hotel Surya Alam. All rights reserved.
+            </p>
+            <div class="footer-social d-flex align-items-center">
+                <a href="#"><i class="fa fa-facebook text-white"></i></a>
+                <a href="#"><i class="fa fa-twitter text-white"></i></a>
+                <a href="#"><i class="fa fa-instagram text-white"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
     <!--================ End Footer Area =================-->
 
     <!--================ Script =================-->
