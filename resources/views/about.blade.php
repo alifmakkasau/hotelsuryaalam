@@ -1,5 +1,6 @@
 @extends('layouts.main')
 
+
 @section('content')
 <!-- ======= Tentang Kami ======= -->
 <section class="about_area section_gap" style="margin-bottom: 100px;">

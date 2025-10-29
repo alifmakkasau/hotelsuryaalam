@@ -43,7 +43,10 @@
                     <li class="nav-item {{ request()->is('about') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('about') }}">About</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Accomodation</a></li>
+                    <li class="nav-item">
+                         <a class="nav-link" href="{{ route('accommodation') }}">Accommodation</a>
+                    </li>
+
                     <li class="nav-item {{ request()->is('gallery') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('gallery') }}">Gallery</a>
                     </li>
@@ -77,7 +80,7 @@
     <li><a href="{{ route('home') }}">Home</a></li>
     <li><a href="{{ route('about') }}">Tentang Kami</a></li>
     <li><a href="{{ route('gallery') }}">Galeri</a></li>
-    <li><a href="#">Kamar</a></li>
+    <li><a href="{{ route('accommodation') }}">Kamar</a></li>
     <li><a href="{{ route('contact') }}">Kontak</a></li>
 
 </ul>
