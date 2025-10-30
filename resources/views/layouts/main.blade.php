@@ -6,7 +6,7 @@
     <link rel="icon" href="{{ asset('template/image/favicon.png') }}" type="image/png">
     <title>@yield('title', 'Hotel Surya Alam')</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap & Vendor CSS -->
     <link rel="stylesheet" href="{{ asset('template/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('template/vendors/linericon/style.css') }}">
     <link rel="stylesheet" href="{{ asset('template/css/font-awesome.min.css') }}">
@@ -23,9 +23,9 @@
     <!-- CSS lain -->
     <link rel="stylesheet" href="{{ asset('template/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('template/css/style.css') }}">
-        integrity="sha512-1ycn6Ica9993+I8k5Jf5RAKOB1p5MNp8zFJY9lZz3eA6JY5sm+d5ZqDgD9E6z7Qx+0Z5N7x4zS0X1GgZj+7xwg=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
+      <integrity="sha512-1ycn6Ica9993+I8k5Jf5RAKOB1p5MNp8zFJY9lZz3eA6JY5sm+d5ZqDgD9E6z7Qx+0Z5N7x4zS0X1GgZj+7xwg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
 </head>
 
@@ -37,7 +37,6 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand logo_h" href="{{ route('home') }}">
                 <img src="{{ asset('template/image/logo.png') }}" alt="Hotel Surya Alam" style="max-height: 50px; width: auto;">
-                <span style="font-weight:bold; font-size:20px; color:#5a3825;"></span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
