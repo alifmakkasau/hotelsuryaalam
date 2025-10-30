@@ -41,17 +41,17 @@
                         <a class="nav-link" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item {{ request()->is('about') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('about') }}">About</a>
+                        <a class="nav-link" href="{{ route('about') }}">Tentang Kami</a>
                     </li>
                     <li class="nav-item">
-                         <a class="nav-link" href="{{ route('accommodation') }}">Accommodation</a>
+                         <a class="nav-link" href="{{ route('accommodation') }}">Kamar</a>
                     </li>
 
                     <li class="nav-item {{ request()->is('gallery') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('gallery') }}">Gallery</a>
+                        <a class="nav-link" href="{{ route('gallery') }}">Galeri</a>
                     </li>
                     <li class="nav-item {{ request()->is('contact') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+    <a class="nav-link" href="{{ route('contact') }}">Kontak</a>
 </li>
 
                 </ul>
