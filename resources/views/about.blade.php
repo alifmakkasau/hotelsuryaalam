@@ -30,6 +30,7 @@
             <h2 class="title_color">Tentang Kami</h2>
             </div>
 
+           {{-- Deskripsi --}}
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <article class="lead" style="text-align: justify;">
@@ -54,7 +55,7 @@
                             <li>Area parkir luas dan aman</li>
                             <li>Mushola yang bersih dan nyaman</li>
                         </ul>
-                        <p class="mt-3">
+                        <p class="mt-3 mb-0">
                             Dengan kombinasi lokasi strategis, fasilitas lengkap, dan pelayanan terbaik, Hotel Surya Alam
                             bertekad menjadi tempat istirahat yang memberikan ketenangan, kepuasan, serta pengalaman
                             menginap yang berkesan bagi setiap tamu.
@@ -62,13 +63,9 @@
                     </article>
                 </div>
             </div>
-        </div>
-    </section>
 
-    {{-- ======= Foto & Visi Misi ======= --}}
-    <section class="vision_area pb-4">
-        <div class="container">
-            <div class="row align-items-center gy-4">
+            {{-- Foto + Visi Misi (jarak dekat dari deskripsi) --}}
+            <div class="row align-items-center gy-4 mt-4">
                 {{-- Foto --}}
                 <div class="col-lg-6 col-md-12 text-center">
                     <figure class="m-0">
@@ -84,20 +81,22 @@
                 <div class="col-lg-6 col-md-12">
                     <div class="section_title mb-3">
                         <h2 class="title_color mb-2">Visi</h2>
-                        <p class="mb-0" style="text-align: justify;">
-                            Menjadi hotel pilihan utama dengan pelayanan terbaik, kenyamanan maksimal, dan suasana
-                            yang menenangkan bagi setiap tamu.
-                        </p>
+                         <article class="lead" style="text-align: justify;">
+                                Menjadi hotel pilihan utama dengan pelayanan terbaik, kenyamanan maksimal, dan suasana
+                                yang menenangkan bagi setiap tamu.
+                         </article>
                     </div>
 
                     <div class="section_title">
                         <h2 class="title_color mb-2">Misi</h2>
-                        <ul class="mb-0" style="line-height: 1.8; text-align: justify;">
-                            <li>Memberikan layanan terbaik yang berorientasi pada kepuasan pelanggan.</li>
-                            <li>Menjaga kebersihan dan kenyamanan lingkungan hotel.</li>
-                            <li>Meningkatkan profesionalisme staf dan pelayanan ramah.</li>
-                            <li>Mendukung pariwisata lokal dengan pelayanan berkualitas.</li>
-                        </ul>
+                         <article class="lead" style="text-align: justify;">
+                            <ul class="mb-0" style="line-height: 1.8; text-align: justify;">
+                                <li>Memberikan layanan terbaik yang berorientasi pada kepuasan pelanggan.</li>
+                                <li>Menjaga kebersihan dan kenyamanan lingkungan hotel.</li>
+                                <li>Meningkatkan profesionalisme staf dan pelayanan ramah.</li>
+                                <li>Mendukung pariwisata lokal dengan pelayanan berkualitas.</li>
+                            </ul>
+                         </article>
                     </div>
                 </div>
             </div>
