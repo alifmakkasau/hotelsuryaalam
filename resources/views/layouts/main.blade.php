@@ -16,6 +16,17 @@
     <link rel="stylesheet" href="{{ asset('template/vendors/lightbox/simpleLightbox.css') }}">
     <link rel="stylesheet" href="{{ asset('template/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('template/css/responsive.css') }}">
+
+    <!-- ✅ Font Awesome CDN untuk ikon fasilitas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS lain -->
+    <link rel="stylesheet" href="{{ asset('template/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/css/style.css') }}">
+        integrity="sha512-1ycn6Ica9993+I8k5Jf5RAKOB1p5MNp8zFJY9lZz3eA6JY5sm+d5ZqDgD9E6z7Qx+0Z5N7x4zS0X1GgZj+7xwg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
 </head>
 
 <body>
@@ -35,27 +46,24 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-    <ul class="nav navbar-nav menu_nav ml-auto">
-        <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('home') }}">Home</a>
-        </li>
-        <li class="nav-item {{ request()->is('about') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('about') }}">Tentang Kami</a>
-        </li>
-        <li class="nav-item {{ request()->is('accommodation') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('accommodation') }}">Kamar</a>
-        </li>
-        <li class="nav-item {{ request()->is('gallery') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('gallery') }}">Galeri</a>
-        </li>
-        <li class="nav-item {{ request()->is('contact') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('contact') }}">Kontak</a>
-        </li>
-    </ul>
-</div>
-
-
+                <ul class="nav navbar-nav menu_nav ml-auto">
+                    <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item {{ request()->is('about') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('about') }}">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item {{ request()->is('accommodation') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('accommodation') }}">Kamar</a>
+                    </li>
+                    <li class="nav-item {{ request()->is('gallery') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('gallery') }}">Galeri</a>
+                    </li>
+                    <li class="nav-item {{ request()->is('contact') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('contact') }}">Kontak</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -63,13 +71,12 @@
 </header>
 <!--================Header Area =================-->
 
+<!--================ Main Content =================-->
+@yield('content')
+<!--================ End Main Content =================-->
 
-    <!--================ Main Content =================-->
-    @yield('content')
-    <!--================ End Main Content =================-->
-
-    <!--================ Footer Area =================-->
-    <footer class="footer-area section_gap" style="background-color: #03091e;">
+<!--================ Footer Area =================-->
+<footer class="footer-area section_gap" style="background-color: #03091e;">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6 single-footer-widget">
@@ -79,14 +86,12 @@
             <div class="col-lg-3 col-md-6 single-footer-widget">
                 <h4>Navigation Links</h4>
                 <ul class="list">
-    <li><a href="{{ route('home') }}">Home</a></li>
-    <li><a href="{{ route('about') }}">Tentang Kami</a></li>
-    <li><a href="{{ route('gallery') }}">Galeri</a></li>
-    <li><a href="{{ route('accommodation') }}">Kamar</a></li>
-    <li><a href="{{ route('contact') }}">Kontak</a></li>
-
-</ul>
-
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('about') }}">Tentang Kami</a></li>
+                    <li><a href="{{ route('gallery') }}">Galeri</a></li>
+                    <li><a href="{{ route('accommodation') }}">Kamar</a></li>
+                    <li><a href="{{ route('contact') }}">Kontak</a></li>
+                </ul>
             </div>
             <div class="col-lg-3 col-md-6 single-footer-widget">
                 <h4>Newsletter</h4>
@@ -117,32 +122,20 @@
         </div>
     </div>
 </footer>
-    <!--================ End Footer Area =================-->
+<!--================ End Footer Area =================-->
 
-    <!--================ Script =================-->
-    {{--  <script src="{{ asset('template/js/jquery-3.2.1.min.js') }}"></script>
-    <script src="{{ asset('template/js/popper.js') }}"></script>
-    <script src="{{ asset('template/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('template/vendors/owl-carousel/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('template/vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.js') }}"></script>
-    <script src="{{ asset('template/vendors/nice-select/js/jquery.nice-select.min.js') }}"></script>
-    <script src="{{ asset('template/vendors/lightbox/simpleLightbox.min.js') }}"></script>
-    <script src="{{ asset('template/js/stellar.js') }}"></script>
-    <script src="{{ asset('template/js/theme.js') }}"></script>
-    <script src="{{ asset('template/js/custom.js') }}"></script>  --}}
-
-        <script src="{{ asset('template/js/jquery-3.2.1.min.js') }}"></script>
-        <script src="{{ asset('template/js/popper.js') }}"></script>
-        <script src="{{ asset('template/js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('template/vendors/owl-carousel/owl.carousel.min.js') }}"></script>
-        <script src="{{ asset('template/js/jquery.ajaxchimp.min.js') }}"></script>
-        <script src="{{ asset('template/js/mail-script.js') }}"></script>
-        <script src="{{ asset('template/vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.js') }}"></script>
-        <script src="{{ asset('template/vendors/nice-select/js/jquery.nice-select.js') }}"></script>
-        <script src="{{ asset('template/js/mail-script.js') }}"></script>
-        <script src="{{ asset('template/js/stellar.js') }}"></script>
-        <script src="{{ asset('template/vendors/lightbox/simpleLightbox.min.js') }}"></script>
-        <script src="{{ asset('template/js/custom.js') }}"></script>
+<!--================ Script =================-->
+<script src="{{ asset('template/js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ asset('template/js/popper.js') }}"></script>
+<script src="{{ asset('template/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('template/vendors/owl-carousel/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('template/js/jquery.ajaxchimp.min.js') }}"></script>
+<script src="{{ asset('template/js/mail-script.js') }}"></script>
+<script src="{{ asset('template/vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.js') }}"></script>
+<script src="{{ asset('template/vendors/nice-select/js/jquery.nice-select.js') }}"></script>
+<script src="{{ asset('template/js/stellar.js') }}"></script>
+<script src="{{ asset('template/vendors/lightbox/simpleLightbox.min.js') }}"></script>
+<script src="{{ asset('template/js/custom.js') }}"></script>
 
 </body>
 </html>
