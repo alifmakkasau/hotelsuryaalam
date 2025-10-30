@@ -36,23 +36,25 @@
                 <span class="icon-bar"></span>
             </button>
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                <ul class="nav navbar-nav menu_nav ml-auto">
-                    <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('home') }}">Home</a>
-                    </li>
-                    <li class="nav-item {{ request()->is('about') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('about') }}">Tentang Kami</a>
-                    </li>
-                    <li class="nav-item">
-                         <a class="nav-link" href="{{ route('accommodation') }}">Kamar</a>
-                    </li>
+    <ul class="nav navbar-nav menu_nav ml-auto">
+        <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('home') }}">Home</a>
+        </li>
+        <li class="nav-item {{ request()->is('about') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('about') }}">Tentang Kami</a>
+        </li>
+        <li class="nav-item {{ request()->is('accommodation') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('accommodation') }}">Kamar</a>
+        </li>
+        <li class="nav-item {{ request()->is('gallery') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('gallery') }}">Galeri</a>
+        </li>
+        <li class="nav-item {{ request()->is('contact') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('contact') }}">Kontak</a>
+        </li>
+    </ul>
+</div>
 
-                    <li class="nav-item {{ request()->is('gallery') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('gallery') }}">Galeri</a>
-                    </li>
-                    <li class="nav-item {{ request()->is('contact') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('contact') }}">Kontak</a>
-</li>
 
                 </ul>
             </div>

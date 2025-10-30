@@ -3,6 +3,28 @@
 @section('title', 'Accommodation - Hotel Surya Alam')
 
 @section('content')
+<!-- ======= Header Tentang Kami ======= -->
+<section class="about_banner_area" 
+    style="
+        background: url('{{ asset('template/image/about-bg.jpg') }}') center center/cover no-repeat;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        position: relative;
+    ">
+    <div style="background-color: rgba(0,0,0,0.4); position:absolute; top:0; left:0; width:100%; height:100%;"></div>
+    <div class="container text-center" style="position: relative; z-index: 2;">
+        <h1 style="font-weight: bold; font-size: 42px;">Kamar</h1>
+        <p style="font-size: 18px; margin-top: 10px;">
+            <a href="{{ url('/') }}" style="color: #fff; text-decoration: none;">Home</a>
+            <span style="margin: 0 8px;">&#x2192;</span>
+            Kamar
+        </p>
+    </div>
+</section>
+
 <!--================Accommodation Area =================-->
 <section class="accomodation_area section_gap">
     <div class="container">
@@ -12,53 +34,33 @@
         </div>
 
         <div class="row mb_30">
-            <!-- Kamar 1 -->
-            <div class="col-lg-3 col-sm-6 mb-4">
-                <div class="accomodation_item text-center">
-                    <div class="hotel_img">
-                        <img src="{{ asset('template/image/room1.jpg') }}" alt="Double Deluxe Room" class="img-fluid" style="border-radius:10px;">
-                        <a href="#" class="btn theme_btn button_hover mt-2">BOOK NOW</a>
-                    </div>
-                    <h4 class="sec_h4 mt-3">Double Deluxe Room</h4>
-                    <h5>$250<span>/night</span></h5>
-                </div>
-            </div>
+            @foreach($rooms as $room)
+                <div class="col-lg-3 col-sm-6 mb-4">
+                    <div class="accomodation_item text-center shadow-sm rounded">
+                        <div class="hotel_img position-relative">
+                            @if ($room->images->isNotEmpty())
+                                <img src="{{ asset('storage/' . $room->images->first()->path) }}" 
+                                    alt="{{ $room->name }}" 
+                                    class="img-fluid rounded-top">
+                            @else
+                                <img src="{{ asset('template/image/room1.jpg') }}" 
+                                    alt="Default Room" 
+                                    class="img-fluid rounded-top">
+                            @endif
 
-            <!-- Kamar 2 -->
-            <div class="col-lg-3 col-sm-6 mb-4">
-                <div class="accomodation_item text-center">
-                    <div class="hotel_img">
-                        <img src="{{ asset('template/image/room2.jpg') }}" alt="Single Deluxe Room" class="img-fluid" style="border-radius:10px;">
-                        <a href="#" class="btn theme_btn button_hover mt-2">BOOK NOW</a>
+                            <a href="#" 
+                               class="btn theme_btn button_hover position-absolute bottom-0 start-50 translate-middle-x mb-2">
+                                BOOK NOW
+                            </a>
+                        </div>
+                        <div class="p-3">
+                            <h4 class="sec_h4">{{ $room->name }}</h4>
+                            <h5>Rp{{ number_format($room->base_price, 0, ',', '.') }}<span>/malam</span></h5>
+                            <p class="mt-2 text-muted">{{ Str::limit($room->description, 80) }}</p>
+                        </div>
                     </div>
-                    <h4 class="sec_h4 mt-3">Single Deluxe Room</h4>
-                    <h5>$200<span>/night</span></h5>
                 </div>
-            </div>
-
-            <!-- Kamar 3 -->
-            <div class="col-lg-3 col-sm-6 mb-4">
-                <div class="accomodation_item text-center">
-                    <div class="hotel_img">
-                        <img src="{{ asset('template/image/room3.jpg') }}" alt="Honeymoon Suite" class="img-fluid" style="border-radius:10px;">
-                        <a href="#" class="btn theme_btn button_hover mt-2">BOOK NOW</a>
-                    </div>
-                    <h4 class="sec_h4 mt-3">Honeymoon Suite</h4>
-                    <h5>$750<span>/night</span></h5>
-                </div>
-            </div>
-
-            <!-- Kamar 4 -->
-            <div class="col-lg-3 col-sm-6 mb-4">
-                <div class="accomodation_item text-center">
-                    <div class="hotel_img">
-                        <img src="{{ asset('template/image/room4.jpg') }}" alt="Economy Double" class="img-fluid" style="border-radius:10px;">
-                        <a href="#" class="btn theme_btn button_hover mt-2">BOOK NOW</a>
-                    </div>
-                    <h4 class="sec_h4 mt-3">Economy Double</h4>
-                    <h5>$200<span>/night</span></h5>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
