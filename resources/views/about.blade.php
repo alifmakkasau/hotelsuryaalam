@@ -1,9 +1,31 @@
 @extends('layouts.main')
 
 @section('content')
-    {{-- ======= Tentang Kami ======= --}}
-    <section class="about_area section_gap" style="margin-bottom: 100px;">
-        <div class="container">
+<!-- ======= Header Tentang Kami ======= -->
+<section class="about_banner_area"
+    style="
+        background: url('{{ asset('template/image/about-bg.jpg') }}') center center/cover no-repeat;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        position: relative;
+    ">
+    <div style="background-color: rgba(0,0,0,0.4); position:absolute; top:0; left:0; width:100%; height:100%;"></div>
+    <div class="container text-center" style="position: relative; z-index: 2;">
+        <h1 style="font-weight: bold; font-size: 42px;">Tentang Kami</h1>
+        <p style="font-size: 18px; margin-top: 10px;">
+            <a href="{{ url('/') }}" style="color: #fff; text-decoration: none;">Home</a>
+            <span style="margin: 0 8px;">&#x2192;</span> <!-- Panah kanan -->
+            Tentang Kami
+        </p>
+    </div>
+</section>
+
+<!-- ======= Tentang Kami ======= -->
+<section class="about_area section_gap" style="margin-bottom: 100px;">
+    <div class="container">
         <div class="section_title text-center">
             <h2 class="title_color">Tentang Kami</h2>
             </div>
