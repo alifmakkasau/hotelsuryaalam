@@ -4,6 +4,9 @@
 
 @section('content')
 
+<!-- Tambahkan AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 <!--================ Banner Area =================-->
 <section class="banner_area">
     <div class="booking_table d_flex align-items-center">
@@ -11,21 +14,20 @@
             style="background-image: url('{{ asset('template/image/hotel-surya-alam.jpg') }}');
                 background-size: cover;
                 background-position: center;
-                background-repeat: no-repeat;"
-            data-stellar-ratio="0.9"
-            data-stellar-vertical-offset="0">
+                background-repeat: no-repeat;">
         </div>
 
         <div class="container">
-            <div class="banner_content text-center">
-                <h6>Nikmati pengalaman menginap terbaik</h6>
-                <h2>Selamat Datang di Hotel Surya Alam</h2>
-                <p>Tempat terbaik untuk bersantai dan menikmati kenyamanan Anda.</p>
-                <a href="#" class="btn theme_btn button_hover">Pesan Sekarang</a>
+            <div class="banner_content text-center" data-aos="fade-up" data-aos-duration="1200">
+                <h6 data-aos="fade-down" data-aos-delay="200">Nikmati pengalaman menginap terbaik</h6>
+                <h2 data-aos="zoom-in" data-aos-delay="400">Selamat Datang di Hotel Surya Alam</h2>
+                <p data-aos="fade-up" data-aos-delay="600">Tempat terbaik untuk bersantai dan menikmati kenyamanan Anda.</p>
+                <a href="#" class="btn theme_btn button_hover" data-aos="zoom-in" data-aos-delay="800">Pesan Sekarang</a>
             </div>
         </div>
     </div>
-    <div class="hotel_booking_area position">
+
+    <div class="hotel_booking_area position" data-aos="fade-up" data-aos-duration="1000">
         <div class="container">
             <div class="hotel_booking_table">
                 <div class="col-md-3">
@@ -80,16 +82,17 @@
 </section>
 <!--================ Banner Area =================-->
 
-<!--================ Featured Room Area (Dipindah ke atas) =================-->
+
+<!--================ Featured Room Area =================-->
 <section class="accomodation_area section_gap">
     <div class="container">
-        <div class="section_title text-center">
+        <div class="section_title text-center" data-aos="fade-up">
             <h2 class="title_color">Kamar Unggulan Kami</h2>
             <p>Kami menyediakan berbagai tipe kamar untuk kenyamanan Anda selama menginap.</p>
         </div>
         <div class="row mb_30">
             @foreach ($roomTypes as $room)
-                <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="col-lg-3 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="{{ $loop->index * 150 }}">
                     <div class="accomodation_item text-center shadow-sm rounded">
                         <div class="hotel_img position-relative">
                             @if ($room->images->isNotEmpty())
@@ -114,77 +117,66 @@
 </section>
 <!--================ Featured Room Area =================-->
 
+
 <!--================ About Area =================-->
 <section class="about_history_area section_gap">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 d_flex align-items-center">
+            <div class="col-md-6 d_flex align-items-center" data-aos="fade-right">
                 <div class="about_content">
                     <h2 class="title title_color">Tentang Kami<br> Hotel Surya Alam</h2>
-                    <p>Hotel Surya Alam terletak di area strategis, tepat di kawasan Terminal ALBN dan berada di jalur Trans Kalimantan. Lokasinya yang mudah dijangkau menjadikan hotel ini pilihan ideal bagi tamu yang sedang transit maupun berlibur. Kami menawarkan kenyamanan menginap dengan layanan ramah, fasilitas lengkap, dan suasana yang tenang untuk beristirahat setelah perjalanan panjang.</p>
+                    <p>Hotel Surya Alam terletak di area strategis, tepat di kawasan Terminal ALBN dan berada di jalur Trans Kalimantan...</p>
                     <a href="{{ route('about') }}" class="button_hover theme_btn_two">Pelajari Lebih Lanjut</a>
                 </div>
             </div>
-            <div class="col-md-6">
-                <img src="{{ asset('template/image/tentang-hotel-surya-alam.jpg') }}" alt="Tentang Hotel Surya Alam">
-
+            <div class="col-md-6" data-aos="fade-left">
+                <img src="{{ asset('template/image/tentang-hotel-surya-alam.jpg') }}" alt="Tentang Hotel Surya Alam" class="img-fluid rounded shadow">
             </div>
         </div>
     </div>
 </section>
 <!--================ About Area =================-->
 
+
 <!--================ Facilities Area =================-->
-<section class="facilities_area section_gap" style="background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('{{ asset('template/image/fasilitashome.jpg') }}') center / cover no-repeat;">
+<section class="facilities_area section_gap" 
+    style="background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('{{ asset('template/image/fasilitashome.jpg') }}') center / cover no-repeat;">
    <div class="container">
-        <div class="section_title text-center" >
+        <div class="section_title text-center" data-aos="fade-up">
             <h2 class="title_color" style="color: #ffffff;">Hotel Surya Alam Facilities</h2>
             <p style="color: #ffffff;">Fasilitas lengkap untuk memastikan kenyamanan dan kepuasan Anda selama menginap.</p>
         </div>
         <div class="row mb_30">
-            <div class="col-lg-4 col-md-6">
-                <div class="facilities_item">
-                    <h4 class="sec_h4"><i class="lnr lnr-dinner"></i> Restoran</h4>
-                    <p>Nikmati berbagai hidangan lokal dan internasional yang disajikan oleh koki profesional kami.</p>
+            @php
+                $delay = 0;
+            @endphp
+            @foreach ([
+                ['icon' => 'lnr-dinner', 'title' => 'Restoran', 'desc' => 'Tempat untuk makan dan bersantai.'],
+                ['icon' => 'lnr-laptop-phone', 'title' => 'Wi-Fi Gratis', 'desc' => 'Akses internet cepat dan gratis.'],
+                ['icon' => 'lnr-car', 'title' => 'Area Parkir Luas', 'desc' => 'Area parkir aman dan nyaman.'],
+                ['icon' => 'lnr-camera-video', 'title' => 'CCTV 24 Jam', 'desc' => 'Keamanan terjamin dengan CCTV aktif.'],
+                ['icon' => 'lnr-clock', 'title' => 'Layanan 24 Jam', 'desc' => 'Staf siap membantu kapan saja.'],
+                ['icon' => 'lnr-magic-wand', 'title' => 'Mushola', 'desc' => 'Mushola bersih dan nyaman.'],
+            ] as $facility)
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ $delay += 100 }}">
+                    <div class="facilities_item">
+                        <h4 class="sec_h4"><i class="lnr {{ $facility['icon'] }}"></i> {{ $facility['title'] }}</h4>
+                        <p>{{ $facility['desc'] }}</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="facilities_item">
-                    <h4 class="sec_h4"><i class="lnr lnr-laptop-phone"></i> Wi-Fi Gratis</h4>
-                    <p>Akses internet cepat dan gratis di seluruh area hotel untuk kenyamanan Anda.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="facilities_item">
-                    <h4 class="sec_h4"><i class="lnr lnr-car"></i> Area Parkir Luas</h4>
-                    <p>Kami menyediakan area parkir luas yang aman dan nyaman bagi semua tamu hotel.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="facilities_item">
-                    <h4 class="sec_h4"><i class="lnr lnr-camera-video"></i> CCTV 24 Jam</h4>
-                    <p>Area hotel dilengkapi dengan CCTV aktif 24 jam demi kenyamanan dan keamanan tamu selama menginap.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="facilities_item">
-                    <h4 class="sec_h4"><i class="lnr lnr-clock"></i> Layanan 24 Jam</h4>
-                    <p>Staf kami siap membantu dan melayani kebutuhan Anda kapan saja, 24 jam penuh.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="facilities_item">
-                    <h4 class="sec_h4"><i class="lnr lnr-magic-wand"></i> Mushola</h4>
-                    <p>Tersedia mushola yang bersih dan nyaman bagi tamu muslim untuk beribadah.</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
 <!--================ Facilities Area =================-->
+
+<!-- Tambahkan AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+</script>
+
 @endsection
