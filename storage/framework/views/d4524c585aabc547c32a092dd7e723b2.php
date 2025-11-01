@@ -63,28 +63,29 @@
 
                             <!-- ✅ Daftar fasilitas dengan ikon (versi kamu yang diperbarui) -->
                             <?php if($room->amenities->isNotEmpty()): ?>
-                                <ul class="list-unstyled small text-muted d-flex flex-wrap justify-content-center gap-2 mt-3">
-                                    <?php $__currentLoopData = $room->amenities; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $amenity): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <?php
-                                            $icons = [
-                                                'WiFi' => 'fa-wifi',
-                                                'AC' => 'fa-snowflake',
-                                                'TV' => 'fa-tv',
-                                                'Parking' => 'fa-car',
-                                                'Kamar mandi dalam' => 'fa-bath',
-                                                'Meja' => 'fa-chair',
-                                                'Balkon' => 'fa-building',
-                                                'Breakfast' => 'fa-utensils',
-                                            ];
-                                            $icon = $icons[$amenity->name] ?? 'fa-circle';
-                                        ?>
-                                        <li class="d-flex align-items-center bg-light px-2 py-1 rounded" style="gap:6px;">
-                                            <i class="fa-solid <?php echo e($icon); ?>" style="color:#f8b600;"></i>
-                                            <span><?php echo e($amenity->name); ?></span>
-                                        </li>
-                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                </ul>
-                            <?php endif; ?>
+    <ul class="list-unstyled small text-muted d-flex flex-wrap justify-content-center gap-2 mt-3">
+        <?php $__currentLoopData = $room->amenities; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $amenity): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php
+                $icons = [
+                    'WiFi' => 'fa fa-wifi',
+                    'AC' => 'fa fa-snowflake-o',
+                    'TV' => 'fa fa-tv',
+                    'Parking' => 'fa fa-car',
+                    'Kamar mandi dalam' => 'fa fa-bathtub',
+                    'Meja' => 'fa fa-chair',
+                    'Balkon' => 'fa fa-building',
+                    'Breakfast' => 'fa fa-cutlery',
+                ];
+                $icon = $icons[$amenity->name] ?? 'fa fa-circle';
+            ?>
+            <li class="d-flex align-items-center bg-light px-2 py-1 rounded" style="gap:6px;">
+                <i class="<?php echo e($icon); ?>" style="color:#f8b600;"></i>
+                <span><?php echo e($amenity->name); ?></span>
+            </li>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </ul>
+<?php endif; ?>
+
                         </div>
                     </div>
                 </div>

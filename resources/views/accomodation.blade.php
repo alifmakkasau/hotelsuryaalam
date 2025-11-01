@@ -63,28 +63,29 @@
 
                             <!-- ✅ Daftar fasilitas dengan ikon (versi kamu yang diperbarui) -->
                             @if ($room->amenities->isNotEmpty())
-                                <ul class="list-unstyled small text-muted d-flex flex-wrap justify-content-center gap-2 mt-3">
-                                    @foreach($room->amenities as $amenity)
-                                        @php
-                                            $icons = [
-                                                'WiFi' => 'fa-wifi',
-                                                'AC' => 'fa-snowflake',
-                                                'TV' => 'fa-tv',
-                                                'Parking' => 'fa-car',
-                                                'Kamar mandi dalam' => 'fa-bath',
-                                                'Meja' => 'fa-chair',
-                                                'Balkon' => 'fa-building',
-                                                'Breakfast' => 'fa-utensils',
-                                            ];
-                                            $icon = $icons[$amenity->name] ?? 'fa-circle';
-                                        @endphp
-                                        <li class="d-flex align-items-center bg-light px-2 py-1 rounded" style="gap:6px;">
-                                            <i class="fa-solid {{ $icon }}" style="color:#f8b600;"></i>
-                                            <span>{{ $amenity->name }}</span>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            @endif
+    <ul class="list-unstyled small text-muted d-flex flex-wrap justify-content-center gap-2 mt-3">
+        @foreach($room->amenities as $amenity)
+            @php
+                $icons = [
+                    'WiFi' => 'fa fa-wifi',
+                    'AC' => 'fa fa-snowflake-o',
+                    'TV' => 'fa fa-tv',
+                    'Parking' => 'fa fa-car',
+                    'Kamar mandi dalam' => 'fa fa-bathtub',
+                    'Meja' => 'fa fa-chair',
+                    'Balkon' => 'fa fa-building',
+                    'Breakfast' => 'fa fa-cutlery',
+                ];
+                $icon = $icons[$amenity->name] ?? 'fa fa-circle';
+            @endphp
+            <li class="d-flex align-items-center bg-light px-2 py-1 rounded" style="gap:6px;">
+                <i class="{{ $icon }}" style="color:#f8b600;"></i>
+                <span>{{ $amenity->name }}</span>
+            </li>
+        @endforeach
+    </ul>
+@endif
+
                         </div>
                     </div>
                 </div>
