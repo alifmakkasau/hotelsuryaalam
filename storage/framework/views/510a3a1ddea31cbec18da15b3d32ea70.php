@@ -30,8 +30,10 @@
                      data-aos="fade-up" 
                      data-aos-delay="<?php echo e($index * 150); ?>" 
                      data-aos-duration="800">
-                    <div class="gallery-card">
+                   <div class="gallery-card">
+                     <a href="<?php echo e(asset('template/image/' . $image)); ?>" data-lightbox="hotel-gallery" data-title="Foto <?php echo e($index + 1); ?>">
                         <img src="<?php echo e(asset('template/image/' . $image)); ?>" alt="Foto <?php echo e($index + 1); ?>" class="img-fluid rounded">
+                    </a>
                     </div>
                 </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

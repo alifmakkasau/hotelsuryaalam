@@ -41,9 +41,10 @@
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h2 class="fw-bold mb-0">{{ $room->name }}</h2>
 
-                            <a href="{{ route('booking') }}" class="btn book-now-btn px-4 py-2">
+                            <a href="{{ route('booking', ['room_id' => $room->id]) }}" class="btn book-now-btn px-4 py-2">
                                 BOOK NOW
                             </a>
+
                         </div>
 
                         <h4 style="color: #f8b600; font-weight: 700;">

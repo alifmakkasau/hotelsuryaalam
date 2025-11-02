@@ -30,8 +30,10 @@
                      data-aos="fade-up" 
                      data-aos-delay="{{ $index * 150 }}" 
                      data-aos-duration="800">
-                    <div class="gallery-card">
+                   <div class="gallery-card">
+                     <a href="{{ asset('template/image/' . $image) }}" data-lightbox="hotel-gallery" data-title="Foto {{ $index + 1 }}">
                         <img src="{{ asset('template/image/' . $image) }}" alt="Foto {{ $index + 1 }}" class="img-fluid rounded">
+                    </a>
                     </div>
                 </div>
             @endforeach
