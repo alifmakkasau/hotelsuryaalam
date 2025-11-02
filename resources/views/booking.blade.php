@@ -1,11 +1,26 @@
 @extends('layouts.main')
 
 @section('content')
+
+{{-- ===== HERO SECTION ===== --}}
+<section class="hero-section position-relative text-center text-white d-flex align-items-center justify-content-center"
+    style="background-image: url('{{ asset('template/image/about-bg.jpg') }}');
+           background-size: cover;
+           background-position: center;
+           height: 45vh;
+           margin-top: 80px;">
+    <div class="overlay position-absolute top-0 start-0 w-100 h-100" 
+         style="background: rgba(0, 0, 0, 0.5);"></div>
+
+    <div class="content position-relative z-1">
+        <h1 class="fw-bold display-5">Pesan Kamar</h1>
+        <p class="lead mt-2">Lengkapi formulir di bawah untuk melakukan pemesanan kamar</p>
+    </div>
+</section>
+
+{{-- ===== FORM PEMESANAN ===== --}}
 <section class="booking_form py-5">
     <div class="container">
-        <h2 class="text-center fw-bold mb-3">Pesan Kamar</h2>
-        <p class="text-center mb-5">Lengkapi formulir di bawah untuk melakukan pemesanan kamar</p>
-
         {{-- Pesan sukses --}}
         @if(session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
@@ -27,7 +42,7 @@
 
             {{-- Informasi Tamu --}}
             <div class="card mb-4 p-4 shadow-sm">
-                <h5 class="mb-3">Informasi Tamu</h5>
+                <h5 class="mb-3 fw-semibold">Informasi Tamu</h5>
                 <div class="row g-3">
                     <div class="col-md-4">
                         <label class="form-label">Nama Lengkap *</label>
@@ -46,7 +61,7 @@
 
             {{-- Detail Pemesanan --}}
             <div class="card mb-4 p-4 shadow-sm">
-                <h5 class="mb-3">Detail Pemesanan</h5>
+                <h5 class="mb-3 fw-semibold">Detail Pemesanan</h5>
                 <div class="row g-3">
                     <div class="col-md-3">
                         <label class="form-label">Check-In *</label>
@@ -102,7 +117,7 @@
 
             {{-- Informasi Pembayaran --}}
             <div class="card mb-4 p-4 shadow-sm">
-                <h5 class="mb-3">Informasi Pembayaran</h5>
+                <h5 class="mb-3 fw-semibold">Informasi Pembayaran</h5>
                 <div class="row g-3">
                     <div class="col-md-6">
                         <label class="form-label">Metode Pembayaran *</label>
@@ -120,7 +135,7 @@
 
             {{-- Permintaan Khusus --}}
             <div class="card mb-4 p-4 shadow-sm">
-                <h5 class="mb-3">Permintaan Khusus</h5>
+                <h5 class="mb-3 fw-semibold">Permintaan Khusus</h5>
                 <textarea name="permintaan" class="form-control" rows="3" placeholder="Contoh: Kamar lantai atas, extra bed, dll."></textarea>
             </div>
 
@@ -131,7 +146,7 @@
     </div>
 </section>
 
-{{-- Script: Hitung total otomatis dan preview gambar --}}
+{{-- ===== SCRIPT: Hitung total otomatis dan preview gambar ===== --}}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const selectRoom = document.getElementById('jenis_kamar');
@@ -140,7 +155,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const jumlahKamarInput = document.getElementById('jumlah_kamar');
     const totalInput = document.getElementById('totalPembayaran');
 
-    // Hitung lama menginap (malam)
     function getNights() {
         const checkIn = new Date(checkInInput.value);
         const checkOut = new Date(checkOutInput.value);
@@ -149,7 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return diffDays > 0 ? diffDays : 0;
     }
 
-    // Update total harga dan preview gambar
     function updateTotal() {
         const selected = selectRoom.options[selectRoom.selectedIndex];
         const price = parseFloat(selected?.dataset.price || 0);
@@ -166,7 +179,6 @@ document.addEventListener('DOMContentLoaded', function() {
             totalInput.value = '';
         }
 
-        // Tampilkan gambar kamar hanya kalau tanggal sudah diisi
         document.querySelectorAll('.room-preview').forEach(el => el.style.display = 'none');
         if (selected.value && checkInInput.value && checkOutInput.value) {
             const preview = document.getElementById('room-' + selected.value);
@@ -182,4 +194,5 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('load', updateTotal);
 });
 </script>
+
 @endsection
