@@ -17,11 +17,6 @@
     <link rel="stylesheet" href="{{ asset('template/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('template/css/responsive.css') }}">
 
-    <!-- ✅ Font Awesome CDN untuk ikon fasilitas -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
-          integrity="sha512-1ycn6Ica9993+I8k5Jf5RAKOB1p5MNp8zFJY9lZz3eA6JY5sm+d5ZqDgD9E6z7Qx+0Z5N7x4zS0X1GgZj+7xwg==" 
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <!-- ✅ Tambahkan CSS AOS (Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>

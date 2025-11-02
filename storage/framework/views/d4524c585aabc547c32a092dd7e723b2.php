@@ -71,7 +71,7 @@
                     'AC' => 'fa fa-snowflake-o',
                     'TV' => 'fa fa-tv',
                     'Parking' => 'fa fa-car',
-                    'Kamar mandi dalam' => 'fa fa-bathtub',
+                    'Kamar mandi dalam' => 'fa fa-s15',
                     'Meja' => 'fa fa-chair',
                     'Balkon' => 'fa fa-building',
                     'Breakfast' => 'fa fa-cutlery',
