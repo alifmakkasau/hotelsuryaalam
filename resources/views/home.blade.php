@@ -100,8 +100,10 @@
                             @else
                                 <img src="{{ asset('template/image/room1.jpg') }}" alt="Default Room" class="img-fluid rounded-top">
                             @endif
-                            <a href="#" class="btn theme_btn button_hover position-absolute bottom-0 start-50 translate-middle-x mb-2">
-                                Pesan
+                            <a href="{{ route('accommodation') }}" 
+                             class="btn theme_btn button_hover position-absolute bottom-0 start-50 translate-middle-x mb-2"
+                               style="background-color: #f8b600; color: #000; font-weight: 600;">
+                                LIHAT DETAIL
                             </a>
                         </div>
                         <div class="p-3">

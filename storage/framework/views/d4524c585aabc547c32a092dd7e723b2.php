@@ -45,9 +45,8 @@
                             <?php endif; ?>
 
                             <a href="<?php echo e(route('accommodation.detail', $room->id)); ?>" 
-                               class="btn theme_btn button_hover position-absolute bottom-0 start-50 translate-middle-x mb-2"
-                               style="background-color: #f8b600; color: #000; font-weight: 600;">
-                                LIHAT DETAIL
+                                class="btn theme_btn button_hover position-absolute bottom-0 start-50 translate-middle-x mb-2">
+                                Pesan
                             </a>
                         </div>
 
