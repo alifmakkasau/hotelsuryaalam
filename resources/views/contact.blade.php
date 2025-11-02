@@ -1,17 +1,10 @@
 @extends('layouts.main')
 
 @section('content')
-<!-- ======= Header Tentang Kami ======= -->
-<section class="about_banner_area" 
-    style="
-        background: url('{{ asset('template/image/about-bg.jpg') }}') center center/cover no-repeat;
-        height: 300px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        position: relative;
-    ">
+<!-- ======= Header Kontak ======= -->
+<section class="about_banner_area"
+    style="background: url('{{ asset('template/image/about-bg.jpg') }}') center center/cover no-repeat;
+           height: 300px; display: flex; align-items: center; justify-content: center; color: white; position: relative;">
     <div style="background-color: rgba(0,0,0,0.4); position:absolute; top:0; left:0; width:100%; height:100%;"></div>
     <div class="container text-center" style="position: relative; z-index: 2;">
         <h1 style="font-weight: bold; font-size: 42px;">Kontak</h1>
@@ -26,7 +19,7 @@
 <section class="contact_area section_gap" style="padding-top: 100px; padding-bottom: 60px;">
     <div class="container">
         <!-- Judul Halaman -->
-        <div class="section_title text-center mb-5">
+        <div class="section_title text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
             <h2 class="title_color" style="color: #000;">Hubungi Kami</h2>
             <p style="max-width: 700px; margin: 0 auto; text-align: justify;">
                 Kami senang dapat membantu Anda! Jangan ragu untuk menghubungi kami melalui informasi di bawah ini
@@ -36,7 +29,7 @@
 
         <!-- Informasi Kontak -->
         <div class="row mb-5">
-            <div class="col-md-6">
+            <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
                 <h4 style="color:#000;">Alamat Hotel Surya Alam</h4>
                 <p style="font-size:16px; line-height:1.6;">
                     Jl. Trans Kalimantan No.1, Sul Ambawang Kuala,<br>
@@ -50,7 +43,7 @@
                 </p>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000">
                 <h4 style="color:#000;">Lokasi Kami</h4>
                 <div style="width:100%; height:300px; border-radius:10px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,0.2);">
                     <iframe 
@@ -66,7 +59,7 @@
         </div>
 
         <!-- Form Kontak -->
-        <div class="contact_form_area">
+        <div class="contact_form_area" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
             <h4 class="mb-4" style="color:#000;">Kirim Pesan</h4>
             <form class="row contact_form" action="#" method="post" id="contactForm">
                 @csrf

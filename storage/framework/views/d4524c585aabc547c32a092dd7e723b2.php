@@ -5,15 +5,8 @@
 <?php $__env->startSection('content'); ?>
 <!-- ======= Header Tentang Kami ======= -->
 <section class="about_banner_area" 
-    style="
-        background: url('<?php echo e(asset('template/image/about-bg.jpg')); ?>') center center/cover no-repeat;
-        height: 300px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        position: relative;
-    ">
+    style="background: url('<?php echo e(asset('template/image/about-bg.jpg')); ?>') center center/cover no-repeat;
+           height: 300px; display: flex; align-items: center; justify-content: center; color: white; position: relative;">
     <div style="background-color: rgba(0,0,0,0.4); position:absolute; top:0; left:0; width:100%; height:100%;"></div>
     <div class="container text-center" style="position: relative; z-index: 2;">
         <h1 style="font-weight: bold; font-size: 42px;">Kamar</h1>
@@ -26,16 +19,19 @@
 </section>
 
 <!--================ Accommodation Area =================-->
-<section class="accomodation_area section_gap">
+<section class="accomodation_area section_gap" data-aos="fade-up" data-aos-duration="1000">
     <div class="container">
-        <div class="section_title text-center">
+        <div class="section_title text-center" data-aos="fade-up" data-aos-duration="1000">
             <h2 class="title_color">Special Accommodation</h2>
             <p>Temukan berbagai pilihan kamar terbaik kami yang dirancang untuk kenyamanan Anda.</p>
         </div>
 
         <div class="row mb_30">
-            <?php $__currentLoopData = $rooms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $room): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="col-lg-3 col-sm-6 mb-4">
+            <?php $__currentLoopData = $rooms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $room): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="col-lg-3 col-sm-6 mb-4" 
+                     data-aos="fade-up" 
+                     data-aos-delay="<?php echo e($index * 100); ?>" 
+                     data-aos-duration="800">
                     <div class="accomodation_item text-center shadow-sm rounded" style="border: 1px solid #eee;">
                         <div class="hotel_img position-relative">
                             <?php if($room->images->isNotEmpty()): ?>
@@ -49,11 +45,10 @@
                             <?php endif; ?>
 
                             <a href="<?php echo e(route('accommodation.detail', $room->id)); ?>" 
-   class="btn theme_btn button_hover position-absolute bottom-0 start-50 translate-middle-x mb-2"
-   style="background-color: #f8b600; color: #000; font-weight: 600;">
-    LIHAT DETAIL
-</a>
-
+                               class="btn theme_btn button_hover position-absolute bottom-0 start-50 translate-middle-x mb-2"
+                               style="background-color: #f8b600; color: #000; font-weight: 600;">
+                                LIHAT DETAIL
+                            </a>
                         </div>
 
                         <div class="p-3">
@@ -61,31 +56,29 @@
                             <h5>Rp<?php echo e(number_format($room->base_price, 0, ',', '.')); ?><span>/malam</span></h5>
                             <p class="mt-2 text-muted"><?php echo e(Str::limit($room->description, 80)); ?></p>
 
-                            <!-- ✅ Daftar fasilitas dengan ikon (versi kamu yang diperbarui) -->
                             <?php if($room->amenities->isNotEmpty()): ?>
-    <ul class="list-unstyled small text-muted d-flex flex-wrap justify-content-center gap-2 mt-3">
-        <?php $__currentLoopData = $room->amenities; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $amenity): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <?php
-                $icons = [
-                    'WiFi' => 'fa fa-wifi',
-                    'AC' => 'fa fa-snowflake-o',
-                    'TV' => 'fa fa-tv',
-                    'Parking' => 'fa fa-car',
-                    'Kamar mandi dalam' => 'fa fa-s15',
-                    'Meja' => 'fa fa-chair',
-                    'Balkon' => 'fa fa-building',
-                    'Breakfast' => 'fa fa-cutlery',
-                ];
-                $icon = $icons[$amenity->name] ?? 'fa fa-circle';
-            ?>
-            <li class="d-flex align-items-center bg-light px-2 py-1 rounded" style="gap:6px;">
-                <i class="<?php echo e($icon); ?>" style="color:#f8b600;"></i>
-                <span><?php echo e($amenity->name); ?></span>
-            </li>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    </ul>
-<?php endif; ?>
-
+                                <ul class="list-unstyled small text-muted d-flex flex-wrap justify-content-center gap-2 mt-3">
+                                    <?php $__currentLoopData = $room->amenities; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $amenity): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <?php
+                                            $icons = [
+                                                'WiFi' => 'fa fa-wifi',
+                                                'AC' => 'fa fa-snowflake-o',
+                                                'TV' => 'fa fa-tv',
+                                                'Parking' => 'fa fa-car',
+                                                'Kamar mandi dalam' => 'fa fa-bathtub',
+                                                'Meja' => 'fa fa-chair',
+                                                'Balkon' => 'fa fa-building',
+                                                'Breakfast' => 'fa fa-cutlery',
+                                            ];
+                                            $icon = $icons[$amenity->name] ?? 'fa fa-circle';
+                                        ?>
+                                        <li class="d-flex align-items-center bg-light px-2 py-1 rounded" style="gap:6px;">
+                                            <i class="<?php echo e($icon); ?>" style="color:#f8b600;"></i>
+                                            <span><?php echo e($amenity->name); ?></span>
+                                        </li>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </ul>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -95,25 +88,23 @@
 </section>
 <!--================ End Accommodation Area =================-->
 
-
 <!--================ Booking Form Area =================-->
-<section class="hotel_booking_area mt-5" style="background-color: #020c28; padding: 50px 0;">
+<section class="hotel_booking_area mt-5" style="background-color: #020c28; padding: 50px 0;" 
+         data-aos="fade-up" data-aos-duration="1000">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-3 col-md-12 text-white mb-4 mb-lg-0">
+            <div class="col-lg-3 col-md-12 text-white mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
                 <h3 style="font-weight: 700;">BOOK<br>YOUR ROOM</h3>
             </div>
-            <div class="col-lg-9 col-md-12">
+            <div class="col-lg-9 col-md-12" data-aos="fade-left" data-aos-duration="1000">
                 <form action="#" method="GET">
                     <div class="row g-3">
                         <div class="col-md-3">
                             <input type="date" class="form-control" name="check_in" placeholder="Arrival Date">
                         </div>
-
                         <div class="col-md-3">
                             <input type="date" class="form-control" name="check_out" placeholder="Departure Date">
                         </div>
-
                         <div class="col-md-2">
                             <select class="form-select" name="adults">
                                 <option value="">Adult</option>
@@ -122,7 +113,6 @@
                                 <option value="3">3 Adults</option>
                             </select>
                         </div>
-
                         <div class="col-md-2">
                             <select class="form-select" name="children">
                                 <option value="">Child</option>
@@ -131,10 +121,9 @@
                                 <option value="2">2</option>
                             </select>
                         </div>
-
                         <div class="col-md-2">
                             <button type="submit" class="btn w-100" 
-                                style="background-color: #f8b600; color: #000; font-weight: 600;">
+                                    style="background-color: #f8b600; color: #000; font-weight: 600;">
                                 BOOK NOW
                             </button>
                         </div>
