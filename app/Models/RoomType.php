@@ -2,14 +2,53 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class RoomType extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'slug',
+        'capacity',
+        'description',
+        'base_price',
+    ];
+
+    /**
+     * Boot method untuk otomatis generate slug
+     */
+    protected static function booted()
     {
-        protected $fillable = ['name','capacity','description','slug','base_price'];
-        public function rooms(){ return $this->hasMany(Room::class); }
-        public function amenities(){ return $this->belongsToMany(Amenity::class); }
-        public function rates(){ return $this->hasMany(Rate::class); }
-        public function images(){ return $this->morphMany(Image::class,'imageable'); }
+        static::creating(function ($roomType) {
+            if (empty($roomType->slug)) {
+                $roomType->slug = Str::slug($roomType->name);
+            }
+        });
+
+        static::updating(function ($roomType) {
+            if (empty($roomType->slug)) {
+                $roomType->slug = Str::slug($roomType->name);
+            }
+        });
     }
 
+    /**
+     * Relasi ke tabel images
+     */
+    public function images()
+    {
+        return $this->hasMany(RoomImage::class);
+    }
+
+    /**
+     * Relasi ke tabel amenities
+     */
+    public function amenities()
+    {
+        return $this->belongsToMany(Amenity::class);
+    }
+}

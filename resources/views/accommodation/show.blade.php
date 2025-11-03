@@ -11,7 +11,7 @@
     <p class="mt-2">
       <a href="{{ url('/') }}" class="text-white text-decoration-none">Home</a>
       <span class="mx-2">→</span>
-      <a href="{{ route('accom.index') }}" class="text-white text-decoration-none">Accommodation</a>
+      <a href="{{ route('accom.index') }}" class="text-white text-decoration-none">Kamar</a>
       <span class="mx-2">→</span>
       Detail
     </p>

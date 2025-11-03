@@ -87,6 +87,8 @@
     </div>
 </section>
 
+
+
 <!--================ Booking Strip Area (opsional) =================-->
 <section class="hotel_booking_area mt-5" style="background-color: #020c28; padding: 50px 0;" 
          data-aos="fade-up" data-aos-duration="1000">

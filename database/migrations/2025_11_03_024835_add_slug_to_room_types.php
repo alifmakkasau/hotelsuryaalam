@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('room_types', function (Blueprint $table) {
-            $table->string('slug')->nullable();
+            // Cek dulu apakah kolom 'slug' sudah ada
+            if (!Schema::hasColumn('room_types', 'slug')) {
+                $table->string('slug')->nullable()->after('name'); // bisa taruh setelah kolom 'name'
+            }
         });
     }
 
@@ -22,7 +25,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('room_types', function (Blueprint $table) {
-            //
+            // Hanya hapus kolom jika memang ada
+            if (Schema::hasColumn('room_types', 'slug')) {
+                $table->dropColumn('slug');
+            }
         });
     }
 };

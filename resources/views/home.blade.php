@@ -22,7 +22,7 @@
                 <h6 data-aos="fade-down" data-aos-delay="200">Nikmati pengalaman menginap terbaik</h6>
                 <h2 data-aos="zoom-in" data-aos-delay="400">Selamat Datang di Hotel Surya Alam</h2>
                 <p data-aos="fade-up" data-aos-delay="600">Tempat terbaik untuk bersantai dan menikmati kenyamanan Anda.</p>
-                <a href="#" class="btn theme_btn button_hover" data-aos="zoom-in" data-aos-delay="800">Pesan Sekarang</a>
+                <a href="{{ route('booking') }}" class="btn theme_btn button_hover" data-aos="zoom-in" data-aos-delay="800">Pesan Sekarang</a>
             </div>
         </div>
     </div>
@@ -100,8 +100,11 @@
                             @else
                                 <img src="{{ asset('template/image/room1.jpg') }}" alt="Default Room" class="img-fluid rounded-top">
                             @endif
-                            <a href="{{ route('accommodation') }}" 
-                             class="btn theme_btn button_hover position-absolute bottom-0 start-50 translate-middle-x mb-2"
+                            {{-- 🔹 Tombol detail kamar otomatis pakai slug kalau ada, fallback ke id --}}
+                            <a href="{{ $room->slug 
+                                        ? route('accom.show', ['roomType' => $room->slug]) 
+                                        : route('accom.show', ['roomType' => $room->id]) }}" 
+                               class="btn theme_btn button_hover position-absolute bottom-0 start-50 translate-middle-x mb-2"
                                style="background-color: #f8b600; color: #000; font-weight: 600;">
                                 LIHAT DETAIL
                             </a>
@@ -152,7 +155,7 @@
             @php
                 $delay = 0;
             @endphp
-            @foreach ([
+            @foreach ([ 
                 ['icon' => 'lnr-dinner', 'title' => 'Restoran', 'desc' => 'Tempat untuk makan dan bersantai.'],
                 ['icon' => 'lnr-laptop-phone', 'title' => 'Wi-Fi Gratis', 'desc' => 'Akses internet cepat dan gratis.'],
                 ['icon' => 'lnr-car', 'title' => 'Area Parkir Luas', 'desc' => 'Area parkir aman dan nyaman.'],
