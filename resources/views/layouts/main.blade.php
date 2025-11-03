@@ -22,7 +22,7 @@
 
     <!-- CSS lain -->
     <link rel="stylesheet" href="{{ asset('template/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('template/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/css/style.css') }}"
         integrity="sha512-1ycn6Ica9993+I8k5Jf5RAKOB1p5MNp8zFJY9lZz3eA6JY5sm+d5ZqDgD9E6z7Qx+0Z5N7x4zS0X1GgZj+7xwg=="
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
@@ -56,7 +56,7 @@
                         <a class="nav-link" href="{{ route('about') }}">Tentang Kami</a>
                     </li>
                     <li class="nav-item {{ request()->is('accommodation') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('accommodation') }}">Kamar</a>
+                        <a class="nav-link" href="{{ route('accom.index') }}">Kamar</a>
                     </li>
                     <li class="nav-item {{ request()->is('gallery') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('gallery') }}">Galeri</a>
@@ -89,7 +89,7 @@
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('about') }}">Tentang Kami</a></li>
                     <li><a href="{{ route('gallery') }}">Galeri</a></li>
-                    <li><a href="{{ route('accommodation') }}">Kamar</a></li>
+                    <li><a href="{{ route('accom.index') }}">Kamar</a></li>
                     <li><a href="{{ route('contact') }}">Kontak</a></li>
                 </ul>
             </div>

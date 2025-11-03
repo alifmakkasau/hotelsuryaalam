@@ -8,6 +8,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Str;
 
 class RoomTypeForm
 {
@@ -15,7 +16,13 @@ class RoomTypeForm
     {
         return $schema
             ->components([
-                TextInput::make('name')->required(),
+                TextInput::make('name')
+                    ->required()
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
+                TextInput::make('slug')
+                            ->unique(ignoreRecord: true)
+                            ->required(),
                 TextInput::make('capacity')->numeric()->minValue(1)->default(2),
                 Textarea::make('description'),
                 TextInput::make('base_price')->numeric()->prefix('IDR')->required(),
@@ -33,7 +40,6 @@ class RoomTypeForm
                             ->numeric()->default(0)->label('Urutan'),
                     ])
                     ->orderable('sort')
-                    ->columnSpanFull(),
-            ])->columns(2);
+            ]);
     }
 }

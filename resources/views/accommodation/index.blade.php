@@ -24,7 +24,7 @@
               @endif
 
               <a
-                href="{{ route('accom.show', $room) }}?check_in={{ request('check_in', now()->toDateString()) }}&check_out={{ request('check_out', now()->addDay()->toDateString()) }}&qty={{ request('qty',1) }}&adults={{ request('adults',2) }}&children={{ request('children',0) }}"
+                href="{{ route('accom.show', $room->slug) }}?check_in={{ request('check_in', now()->toDateString()) }}&check_out={{ request('check_out', now()->addDay()->toDateString()) }}&qty={{ request('qty',1) }}&adults={{ request('adults',2) }}&children={{ request('children',0) }}"
                 class="btn theme_btn button_hover position-absolute bottom-0 start-50 translate-middle-x mb-2"
                 style="background-color:#f8b600;color:#000;font-weight:600;">
                 BOOK NOW
