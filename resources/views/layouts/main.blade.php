@@ -9,13 +9,14 @@
     <!-- Bootstrap & Vendor CSS -->
     <link rel="stylesheet" href="{{ asset('template/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('template/vendors/linericon/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('template/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/vendors/owl-carousel/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/vendors/nice-select/css/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('template/vendors/lightbox/simpleLightbox.css') }}">
     <link rel="stylesheet" href="{{ asset('template/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('template/css/responsive.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
     <!-- ✅ Tambahkan CSS AOS (Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
