@@ -20,12 +20,9 @@
     <!-- ✅ Tambahkan CSS AOS (Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Lightbox CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
-
-<!-- Lightbox JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-
+    <!-- ✅ Lightbox2 (untuk galeri gambar) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 </head>
 
 <body>
@@ -54,7 +51,7 @@
                         <a class="nav-link" href="{{ route('about') }}">Tentang Kami</a>
                     </li>
                     <li class="nav-item {{ request()->is('accommodation') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('accommodation') }}">Kamar</a>
+                        <a class="nav-link" href="{{ route('accom.index') }}">Kamar</a>
                     </li>
                     <li class="nav-item {{ request()->is('gallery') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('gallery') }}">Galeri</a>
@@ -88,7 +85,7 @@
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('about') }}">Tentang Kami</a></li>
                     <li><a href="{{ route('gallery') }}">Galeri</a></li>
-                    <li><a href="{{ route('accommodation') }}">Kamar</a></li>
+                    <li><a href="{{ route('accom.index') }}">Kamar</a></li>
                     <li><a href="{{ route('contact') }}">Kontak</a></li>
                 </ul>
             </div>
@@ -126,17 +123,14 @@
             </div>
         </div>
 
-        <div class="footer-bottom text-center py-3 border-top" 
-     style="margin-bottom: 0; background-color: #03091e;">
-    <p class="footer-text m-0 text-white" style="font-size: 15px;">
-        © 2025 Hotel Surya Alam. All rights reserved.
-    </p>
-</div>
-
+        <div class="footer-bottom text-center py-3 border-top" style="margin-bottom: 0; background-color: #03091e;">
+            <p class="footer-text m-0 text-white" style="font-size: 15px;">
+                © 2025 Hotel Surya Alam. All rights reserved.
+            </p>
+        </div>
     </div>
 </footer>
 <!--================ End Footer Area =================-->
-
 
 <!--================ Script =================-->
 <script src="{{ asset('template/js/jquery-3.2.1.min.js') }}"></script>
@@ -155,9 +149,9 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({
-    duration: 1000,  // durasi animasi (ms)
-    once: true,      // animasi hanya muncul sekali
-    offset: 120      // jarak scroll sebelum animasi mulai
+    duration: 1000,
+    once: true,
+    offset: 120
   });
 </script>
 
